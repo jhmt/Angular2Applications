@@ -4,6 +4,7 @@ import {ContactComponent} from './contact/contact.component';
 import {AboutComponent} from './about/about.component';
 import {HomeComponent} from './home/home.component';
 import {NotepadComponent} from './apps/notepad/notepad.component';
+import {OrderComponent} from './apps/order/order.component';
 
 @Component({
   selector: 'app',
@@ -16,6 +17,7 @@ import {NotepadComponent} from './apps/notepad/notepad.component';
   {path: '/about',       component: AboutComponent },
   {path: '/contact',     component: ContactComponent },
   {path: '/apps/notepad',   component: NotepadComponent },
+  {path: '/apps/order',   component: OrderComponent },
   {path: '/*',           component: HomeComponent }
 ])
 export class AppComponent {}

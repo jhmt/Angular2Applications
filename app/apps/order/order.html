@@ -1,0 +1,24 @@
+<section>
+    <h1>Order Form</h1>
+    <form>
+
+        <h1>Services</h1>
+
+        <ul>
+            <!-- Loop through the services array, assign a click handler, and set or
+                remove the "active" css class if needed -->
+            <li 
+                *ngFor="let service of services" 
+                [class.active]="service.isActive"
+                (click)="toggleActive(service)">
+                <!-- Notice the use of the currency filter, it will format the price -->
+                {{service.name}} <span>{{service.price | currency}}</span>
+            </li>
+        </ul>
+
+        <div class="total">
+            Total: <span>{{totalPrice | currency}}</span>
+        </div>
+
+    </form>
+</section>
