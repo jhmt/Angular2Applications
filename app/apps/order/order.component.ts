@@ -1,35 +1,24 @@
 import {Component, OnInit} from '@angular/core';
+import {ServiceService} from './service.service';
 
 @Component({
   selector: 'order',
   template: require('./order.html'),
-  styles: [require('./order.css')]
+  styles: [require('./order.css')],
+  providers: [ServiceService]
 })
 
 export class OrderComponent implements OnInit {
   public services: [{}];
   public totalPrice: number = 0;
 
+  constructor (
+      private serviceService: ServiceService
+  ) {
+  }
+
   ngOnInit () {
-      this.services = [
-		{
-			name: 'Tutorials Development',
-			price: 500,
-			isActive:true
-		},{
-			name: 'Tutorials Design',
-			price: 300,
-			isActive:false
-		},{
-			name: 'Code Integration',
-			price: 250,
-			isActive:false
-		},{
-			name: 'Training',
-			price: 220,
-			isActive:false
-		}
-	];
+      this.services = this.serviceService.getServices();
     this.sum();
   }
 
