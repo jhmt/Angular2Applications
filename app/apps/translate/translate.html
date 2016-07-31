@@ -1,0 +1,12 @@
+<section>
+    <h1>Translate</h1>
+    <div class="container">
+        <textarea
+            [(ngModel)]="original"
+            (change)="onChange($event)">
+        </textarea>
+        <textarea
+            [ngModel]="result">
+        </textarea>
+    </div>
+</section>
